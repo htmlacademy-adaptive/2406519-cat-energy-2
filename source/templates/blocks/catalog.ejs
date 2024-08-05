@@ -1,0 +1,14 @@
+<section class="catalog">
+  <h1 class="catalog__title">Каталог продукции</h1>
+  <ul class="catalog__list">
+    <% for (const item of items) { %>
+    <%- include('catalog-card', { ...item, className: 'catalog__item' }) %>
+    <% } %>
+
+    <li class="catalog__item catalog__item--alter">
+      <h2 class="catalog__content-title">Показать еще 100500 товаров</h2>
+      <p>На самом деле вкусов гораздо больше!</p>
+      <a class="catalog__content-button button button--alter" href="#">Показать все</a>
+    </li>
+  </ul>
+</section>

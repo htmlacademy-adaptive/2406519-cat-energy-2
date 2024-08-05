@@ -6,7 +6,17 @@
     <p class="hero__text">
       Занялся собой? Займись котом!
     </p>
-    <%- include('../common/picture', { name: 'hero-image', ext: 'png', alt: 'Товар' }) %>
+    <%- include('../common/picture', {
+      name: 'hero-image',
+      ext: 'png',
+      alt: 'Товар',
+      width: 280,
+      height: 270,
+      tabletWidth: 709,
+      tabletHeight: 609,
+      desktopWidth: 552,
+      desktopHeight: 499,
+    }) %>
     <a class="hero__button button" href="programs.html">
       Подобрать программу
     </a>
