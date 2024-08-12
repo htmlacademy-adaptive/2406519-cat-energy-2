@@ -1,5 +1,5 @@
 <header class="main-header">
-  <div class="container">
+  <div class="main-header__container container">
     <a class="main-header__logo logo" href="index.html">
       <picture>
         <source media="(min-width: 1440px)" srcset="images/logo-img-desktop.svg" width="202" height="59">
@@ -12,7 +12,11 @@
       <img class="logo__image" src="images/logo-text.svg" width="101" height="18" alt="logo-text">
     </a>
 
-    <nav class="navigation">
+    <nav class="main-header__navigation navigation">
+      <button class="navigation__toggler" type="button">
+        <span class="visually-hidden">Переключить меню</span>
+      </button>
+
       <ul class="navigation__list">
         <li class="navigation__item">
           <a class="navigation__link navigation__item--current" href="index.html">

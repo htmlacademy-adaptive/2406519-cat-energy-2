@@ -1,4 +1,21 @@
 /* здесь используйте глобальные селекторы img, body, html и так далее */
 body {
+  margin: 0;
   font-family: "Lato", sans-serif;
+  font-size: 14px;
+  line-height: calc(18 / 14);
+
+  @include tablet-desktop {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration-skip-ink: none;
 }

@@ -1,3 +1,29 @@
 .hero {
-  color: #000000;
+  padding-block: 26px 20px;
+  color: #ffffff;
+  text-align: center;
+  background-color: #68b738;
+
+  @include oswald;
+}
+
+.hero__title {
+  margin: 0 0 25px;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1;
+
+  @include tablet-desktop {
+    font-size: 60px;
+  }
+}
+
+.hero__text {
+  margin: 0 0 30px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.hero__button {
+  @include button;
 }

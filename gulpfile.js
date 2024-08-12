@@ -36,7 +36,9 @@ let isDevelopment = true;
 
 export function processMarkup () {
   return src(`${PATH_TO_SOURCE}/templates/*.ejs`)
-    .pipe(ejs({}))
+    .pipe(ejs({
+      isDevelopment
+    }))
     .pipe(htmlmin({ collapseWhitespace: !isDevelopment }))
     .pipe(rename({ extname: '.html' }))
     .pipe(dest(PATH_TO_DIST))
@@ -140,7 +142,7 @@ export function copyStatic () {
 }
 
 export function startServer () {
-  const serveStatic = PATHS_TO_STATIC
+  const serveStatic = [...PATHS_TO_STATIC, `${PATH_TO_SOURCE}pixelperfect/**/*`]
     .filter((path) => path.startsWith('!') === false)
     .map((path) => {
       const dir = path.replace(/(\/\*\*\/.*$)|\/$/, '');

@@ -10,4 +10,15 @@
       <img class="copyright__image" src="images/logo-html.svg" width="27" height="34" alt="">
     </a>
   </div>
+
+  <% if (isDevelopment) { %>
+  <script>
+    window.pixelperfect = {
+      breakpoints: [320, 768, 1440],
+      folder: 'pixelperfect',
+      ext: 'png',
+    };
+  </script>
+  <script src="pixelperfect/pixelperfect.min.js" defer></script>
+  <% } %>
 </footer>
