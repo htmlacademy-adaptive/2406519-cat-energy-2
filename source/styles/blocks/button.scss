@@ -1,0 +1,14 @@
+.button {
+  @include button;
+  @include oswald;
+
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fcfcfc;
+  background-color: #68b738;
+}

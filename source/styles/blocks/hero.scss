@@ -1,10 +1,21 @@
 .hero {
-  padding-block: 26px 20px;
-  color: #ffffff;
+  padding-block: 0 20px;
   text-align: center;
-  background-color: #68b738;
 
   @include oswald;
+
+  img {
+    display: block;
+    margin: -135px 0 3px;
+  }
+}
+
+.hero__content {
+  min-height: 244px;
+  margin-inline: -20px;
+  padding: 26px 20px 32px;
+  color: #ffffff;
+  background-color: #68b738;
 }
 
 .hero__title {
@@ -19,11 +30,12 @@
 }
 
 .hero__text {
-  margin: 0 0 30px;
+  margin: 0;
   line-height: 1;
   text-transform: uppercase;
 }
 
 .hero__button {
-  @include button;
+  width: 100%;
+  margin: 0;
 }

@@ -27,15 +27,9 @@
 }
 
 @mixin button {
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-  line-height: 20px;
+  font: inherit;
   text-decoration-line: none;
-  background-color: #68b738;
-  color: #fcfcfc;
   border: none;
-  outline: none;
   cursor: pointer;
   user-select: none;
 }

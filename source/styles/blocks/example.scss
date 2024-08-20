@@ -1,3 +1,76 @@
 .example {
-  color: #000000;
+  padding-block: 25px 40px;
+  background-color: #eaeaea;
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.example__title {
+  @include oswald;
+
+  margin: 0 0 40px;
+  font-weight: 400px;
+  font-size: 36px;
+  line-height: 40px;
+}
+
+.example__text {
+  margin: 0 0 20px;
+  color: #444444;
+}
+
+.example__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 32px;
+  margin: 0 0 22px;
+  padding: 0;
+  list-style: none;
+}
+
+.example__item {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+.example__key {
+  position: relative;
+  width: fit-content;
+  min-width: calc(100% - 68px);
+  margin: -10px auto 0;
+  padding: 0 18px;
+  font-size: 12px;
+  line-height: 1;
+  color: #444444;
+  background-color: #eaeaea;
+}
+
+.example__value {
+  @include oswald;
+
+  margin: 0;
+  padding: 14px 15px 16px;
+  font-size: 24px;
+  line-height: 1;
+  text-transform: uppercase;
+  border: 1px solid #cdcdcd;
+  border-radius: 2px;
+}
+
+.example__item-alter {
+  @include oswald;
+
+  grid-column: 1 / -1;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.example__expenses {
+  display: inline;
+  margin: 0;
 }
