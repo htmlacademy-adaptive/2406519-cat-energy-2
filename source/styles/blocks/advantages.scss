@@ -6,7 +6,7 @@
   @include oswald;
 
   margin: 0 0 40px;
-  font-weight: 400px;
+  font-weight: 400;
   font-size: 36px;
   line-height: 40px;
 }
@@ -21,7 +21,7 @@
 
 .advantages__item {
   position: relative;
-  min-height: 24px;
+  min-height: 54px;
   padding: 2px 0 4px 80px;
   color: #444444;
 
@@ -35,6 +35,7 @@
     background: #68b738;
     background-repeat: no-repeat;
     background-position: 50%;
+    background-size: 60px;
   }
   // почему так же не получилось в programs.scss ?
   @each $icon in (leaf, food, powder, time) {
