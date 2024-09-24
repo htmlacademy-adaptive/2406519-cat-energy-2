@@ -1,11 +1,6 @@
 .example {
   padding-block: 25px 40px;
   background-color: #eaeaea;
-
-  img {
-    display: block;
-    margin: 0 auto;
-  }
 }
 
 .example__title {
@@ -73,4 +68,71 @@
 .example__expenses {
   display: inline;
   margin: 0;
+}
+
+.example__pictures {
+  --value: var(--position, 50%);
+  position: relative;
+  max-width: 280px;
+  margin: 0 auto;
+
+  @include tablet-desktop {
+    max-width: 560px;
+  }
+
+  img {
+    display: block;
+  }
+
+  picture:first-of-type img {
+    clip-path: inset(0 calc(100% - var(--value, 0)) 0 0);
+  }
+
+  picture:last-of-type img {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.example__comparator {
+  @include button;
+
+  left: var(--value);
+  margin: 0;
+  padding: 0;
+  color: #666666;
+  background-color: transparent;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: #68b738;
+
+    &:active {
+      color: rgba(#5eaa2f, 0.6);
+    }
+
+    &,
+    &::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      transform: translateX(-50%);
+    }
+
+    &::before {
+      content: "";
+      left: 50%;
+      width: 4px;
+      background: currentColor;
+      border-radius: 2px;
+    }
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 }

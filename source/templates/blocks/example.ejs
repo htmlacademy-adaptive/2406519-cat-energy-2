@@ -18,16 +18,36 @@
         <dd class="example__expenses">15 000 руб.</dd>
       </div>
     </dl>
-    <%- include('../common/picture', {
-      name: 'compare-slider',
+    <div class="example__pictures" style="--position: 50%">
+      <% for (const { name, alt} of [
+        {
+          name: 'cat-fat',
+          alt: 'До'
+        },
+        {
+          name: 'cat-thin',
+          alt: 'После'
+        }
+      ]) { %>
+      <%- include('../common/picture', {
+      name,
       ext: 'png',
-      alt: 'result',
+      alt,
       width: 280,
       height: 256,
-      desktopWidth: 1104,
-      desktopHeight: 998,
-      tabletWidth: 709,
-      tabletHeight: 609,
+      tabletWidth: 560,
+      tabletHeight: 512,
+      desktopWidth: 0,
+      desktopHeight: 0,
     }) %>
+      <% } %>
+      <button class="example__comparator" type="button">
+        <span class="visually-hidden">Изменить соотношение</span>
+        <svg width="40" height="40" aria-hidden="true" focusable="false">
+          <use href="icons/stack.svg#thumb" />
+        </svg>
+      </button>
+    </div>
+
   </div>
 </section>
