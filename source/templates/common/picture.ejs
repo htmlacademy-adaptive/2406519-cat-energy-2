@@ -4,7 +4,7 @@
   <source media="(min-width: 1440px)" srcset="images/<%- name %>-desktop@1x.<%- ext %> 1x, images/<%- name %>-desktop@2x.<%- ext %> 2x" width="<%- desktopWidth %>" height="<%- desktopHeight %>">
   <% } %>
 
-  <% if (desktopWidth) { %>
+  <% if (tabletWidth) { %>
   <source media="(min-width: 768px)" srcset="images/<%- name %>-tablet@1x.webp 1x, images/<%- name %>-tablet@2x.webp 2x" width="<%- tabletWidth %>" height="<%- tabletHeight %>" type="image/webp">
   <source media="(min-width: 768px)" srcset="images/<%- name %>-tablet@1x.<%- ext %> 1x, images/<%- name %>-tablet@2x.<%- ext %> 2x" width="<%- tabletWidth %>" height="<%- tabletHeight %>">
   <% } %>

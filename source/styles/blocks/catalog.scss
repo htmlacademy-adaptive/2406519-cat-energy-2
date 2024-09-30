@@ -1,3 +1,17 @@
-.catalog {
-  color: #000000;
+.catalog__list {
+  margin: 0 -20px;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid #ebebeb;
+
+  @include tablet-desktop {
+    margin: 0;
+  }
+}
+
+.catalog__item {
+  &--alter {
+    padding: 78px 20px 24px;
+    text-align: center;
+  }
 }

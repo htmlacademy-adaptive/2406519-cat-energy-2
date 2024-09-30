@@ -92,6 +92,7 @@
     position: absolute;
     top: 0;
     right: 0;
+    clip-path: inset(0 0 0 var(--value, 0));
   }
 }
 
@@ -107,32 +108,32 @@
 
   &:hover {
     color: #68b738;
+  }
 
-    &:active {
-      color: rgba(#5eaa2f, 0.6);
-    }
+  &:active {
+    color: rgba(#5eaa2f, 0.6);
+  }
 
-    &,
-    &::before {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      transform: translateX(-50%);
-    }
+  &,
+  &::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
 
-    &::before {
-      content: "";
-      left: 50%;
-      width: 4px;
-      background: currentColor;
-      border-radius: 2px;
-    }
+  &::before {
+    content: "";
+    left: 50%;
+    width: 4px;
+    background-color: currentColor;
+    border-radius: 2px;
+  }
 
-    svg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

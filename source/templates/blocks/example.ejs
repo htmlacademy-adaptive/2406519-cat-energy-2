@@ -19,7 +19,7 @@
       </div>
     </dl>
     <div class="example__pictures" style="--position: 50%">
-      <% for (const { name, alt} of [
+      <% for (const { name, alt } of [
         {
           name: 'cat-fat',
           alt: 'До'
@@ -30,16 +30,16 @@
         }
       ]) { %>
       <%- include('../common/picture', {
-      name,
-      ext: 'png',
-      alt,
-      width: 280,
-      height: 256,
-      tabletWidth: 560,
-      tabletHeight: 512,
-      desktopWidth: 0,
-      desktopHeight: 0,
-    }) %>
+        name,
+        ext: 'png',
+        alt,
+        width: 280,
+        height: 256,
+        tabletWidth: 560,
+        tabletHeight: 512,
+        desktopWidth: 0,
+        desktopHeight: 0,
+         }) %>
       <% } %>
       <button class="example__comparator" type="button">
         <span class="visually-hidden">Изменить соотношение</span>
@@ -48,6 +48,5 @@
         </svg>
       </button>
     </div>
-
   </div>
 </section>
