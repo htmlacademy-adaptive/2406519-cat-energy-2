@@ -1,3 +1,5 @@
+<% const page = 'index' %>
+
 <!DOCTYPE html>
 <html class="page" lang="ru">
 
@@ -8,7 +10,7 @@
 
 <body class="page__body">
   <div class="firstscreen">
-    <%- include('blocks/main-header') %>
+    <%- include('blocks/main-header', { page }) %>
     <%- include('blocks/hero') %>
 
   </div>
@@ -53,7 +55,7 @@
     <%- include('blocks/example') %>
   </main>
 
-  <%- include('blocks/main-footer') %>
+  <%- include('blocks/main-footer', { page }) %>
 </body>
 
 </html>

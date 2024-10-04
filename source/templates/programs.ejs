@@ -1,3 +1,5 @@
+<% const page = 'programs' %>
+
 <!DOCTYPE html>
 <html class="page" lang="ru">
 
@@ -7,7 +9,7 @@
 </head>
 
 <body class="page__body">
-  <%- include('blocks/main-header') %>
+  <%- include('blocks/main-header', { page }) %>
 
   <main>
     <%- include('blocks/page-header', {
@@ -21,7 +23,7 @@
     </p>
   </main>
 
-  <%- include('blocks/main-footer') %>
+  <%- include('blocks/main-footer', { page }) %>
 </body>
 
 </html>

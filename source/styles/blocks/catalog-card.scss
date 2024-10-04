@@ -3,12 +3,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 17px 0;
   padding: 20px 20px 24px;
-  border-top: 1px solid #ebebeb;
-
-  &--alter {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+  border-bottom: 1px solid #ebebeb;
 
   img {
     display: block;
@@ -45,4 +40,19 @@
 
 .catalog-card__button {
   grid-column: 1 / -1;
+}
+
+.catalog-card--alter {
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding-top: 78px;
+  text-align: center;
+
+  .catalog-card__title {
+    margin: 0 0 8px;
+  }
+
+  .catalog-card__button {
+    margin-top: 21px;
+  }
 }

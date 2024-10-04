@@ -1,3 +1,29 @@
 .additional-product {
-  color: #000000;
+  padding-top: 24px;
+}
+
+.additional-product__title {
+  @include oswald;
+
+  margin: 0 35px;
+  font-style: 14px;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.additional-product__list {
+  margin: 0 0 35px;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid #cdcdcd;
+}
+
+.additional-product__promo-text {
+  margin: 0;
+  padding: 186px 50px 44px;
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: center;
+  color: #ffffff;
+  background-color: #68b738;
 }

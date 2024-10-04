@@ -1,0 +1,28 @@
+.contacts {
+  &--alter {
+    background-color: #ffffff;
+  }
+}
+
+.contacts__body {
+  padding-block: 26px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.contacts__title {
+  @include oswald;
+
+  grid-row: span 2;
+  margin: 0 16px 0 0;
+  font-style: 16px;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: #111111;
+}
+
+.contacts__text {
+  margin: 0;
+  line-height: 20px;
+  color: #444444;
+}

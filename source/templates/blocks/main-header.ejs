@@ -18,21 +18,26 @@
       </button>
 
       <ul class="navigation__list">
+        <% for (const { id, title } of [
+          {
+            id: 'index',
+            title: 'Главная',
+          },
+          {
+            id: 'index',
+            title: 'Каталог продукции',
+          },
+          {
+            id: 'index',
+            title: 'Подбор программы',
+          },
+        ]) { %>
         <li class="navigation__item">
-          <a class="navigation__link navigation__item--current" href="index.html">
-            Главная
+          <a class="navigation__link <%- page === id ? 'navigation__link--current' : '' %>" href="<%- id %>.html">
+            <%- title %>
           </a>
         </li>
-        <li class="navigation__item">
-          <a class="navigation__link" href="catalog.html">
-            Каталог продукции
-          </a>
-        </li>
-        <li class="navigation__item">
-          <a class="navigation__link" href="programs.html">
-            Подбор программы
-          </a>
-        </li>
+        <% } %>
       </ul>
     </nav>
   </div>
