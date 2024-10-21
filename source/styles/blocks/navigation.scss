@@ -2,6 +2,12 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  font-size: 20px;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: center;
+
+  @include oswald;
 
   @include mobile {
     position: absolute;
@@ -9,6 +15,15 @@
     left: 0;
     visibility: hidden;
     border-top: 1px solid #d9d9d9;
+  }
+
+  @include tablet-desktop {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 33px;
+    padding-right: 4px;
+    font-size: 18px;
+    line-height: 24px;
   }
 }
 
@@ -21,12 +36,33 @@
   margin: 0;
   padding: 0;
   background-color: transparent;
+
+  @include tablet-desktop {
+    display: none;
+  }
 }
 
-.navigation__opened {
-  .navigation__list {
-    display: block;
-    visibility: visible;
+.navigation--opened {
+  @include mobile {
+    .navigation__list {
+      display: block;
+      visibility: visible;
+    }
+  }
+}
+
+.navigation__link {
+  display: block;
+  padding: 23px;
+  text-decoration: none;
+
+  @include tablet-desktop {
+    padding: 10px 0 8px;
+    border-bottom: 2px solid transparent;
+
+    &--current {
+      border-color: #68b738;
+    }
   }
 }
 

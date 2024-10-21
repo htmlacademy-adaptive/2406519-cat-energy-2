@@ -4,6 +4,9 @@
     "ecmaVersion": 2022,
     "sourceType": "module"
   },
+  "ignorePatterns": [
+    "*.min.*"
+  ],
   "env": {
     "es2022": true,
     "browser": true

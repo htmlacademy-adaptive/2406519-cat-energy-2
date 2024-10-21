@@ -8,6 +8,19 @@
   }
 }
 
+@mixin title {
+  @include oswald;
+
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 40px;
+
+  @include tablet-desktop {
+    font-size: 60px;
+    line-height: 1;
+  }
+}
+
 @mixin mobile {
   @media (max-width: 767px) {
     @content;
@@ -26,6 +39,12 @@
   }
 }
 
+@mixin retina {
+  @media (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
 @mixin button {
   font: inherit;
   text-decoration: none;
@@ -36,4 +55,22 @@
 
 @mixin oswald {
   font-family: "Oswald", sans-serif;
+}
+
+@mixin background-image ($name, $index: 1) {
+  background-image: url("../../images/#{$name}@#{$index}-x.webp");
+
+  @include tablet-desktop() {
+    background-image: url("../../images/#{$name}-tablet@#{$index}-x.webp");
+  }
+
+  @include desktop() {
+    background-image: url("../../images/#{$name}-desktop@#{$index}-x.webp");
+  }
+
+  @if $index == 1 {
+    @include retina() {
+      @include background-image ($name, $index: 2);
+    }
+  }
 }

@@ -4,6 +4,10 @@
 
 .main-header__logo-text {
   transform: translateX(-5px);
+
+  @include tablet-desktop {
+    display: none;
+  }
 }
 
 .main-header__container {
@@ -12,4 +16,8 @@
   justify-content: space-between;
   align-items: center;
   padding-block: 13px 14px;
+
+  @include tablet-desktop {
+    padding-bottom: 25px;
+  }
 }

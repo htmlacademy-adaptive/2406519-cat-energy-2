@@ -4,18 +4,67 @@
 
   @include oswald;
 
+  @include tablet-desktop {
+    padding: 0;
+    text-align: left;
+  }
+}
+
+.hero__container {
   img {
+    position: relative;
     display: block;
     margin: -135px auto 3px;
+    color: #ffffff;
+  }
+
+  @include tablet-desktop {
+    --container-space: 120px;
+    display: flex;
+    flex-direction: column;
+    padding-block: 40px 0;
+
+    img {
+      z-index: -1;
+      max-width: calc(100% + 180px);
+      margin: -82px -90px 0;
+    }
+
+    picture {
+      order: 99;
+    }
   }
 }
 
 .hero__content {
-  min-height: 244px;
+  position: relative;
   margin-inline: -20px;
-  padding: 26px 20px 32px;
+  padding: 26px 20px 165px;
+  line-height: 1px;
   color: #ffffff;
-  background-color: #68b738;
+  background-color: rgba(#68b738, 0.85);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: #46454a;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+
+    @include background-image("cat-hero");
+  }
+
+  @include tablet-desktop {
+    display: contents;
+    color: #000000;
+    background-color: transparent;
+
+    &::before {
+      display: none;
+    }
+  }
 }
 
 .hero__title {
@@ -25,17 +74,28 @@
   line-height: 1;
 
   @include tablet-desktop {
+    margin-bottom: 40px;
     font-size: 60px;
   }
 }
 
 .hero__text {
   margin: 0;
-  line-height: 1;
+  padding: 7px;
   text-transform: uppercase;
+
+  @include tablet-desktop {
+    font-size: 20px;
+  }
 }
 
 .hero__button {
   width: 100%;
   margin: 0;
+
+  @include tablet-desktop {
+    align-self: flex-start;
+    width: auto;
+    margin-top: 50px;
+  }
 }

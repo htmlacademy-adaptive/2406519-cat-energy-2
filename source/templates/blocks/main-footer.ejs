@@ -1,13 +1,16 @@
 <footer class="main-footer">
   <%- include('contacts', { alter: page === 'index' }) %>
-  <div class="container">
+  <div class="main-footer__container container">
     <a class="main-footer__logo logo" href="index.html">
       <img class="logo__image" src="images/logo-text.svg" width="128" height="24" alt="logo">
     </a>
-    <%- include('social') %>
+    <%- include('social', { className: 'main-footer__social' }) %>
     <a class="main-footer__copyright copyright" href="https://htmlacademy.ru">
       <span class="copyright__text">HTML Academy</span>
-      <img class="copyright__image" src="images/logo-html.svg" width="27" height="34" alt="">
+
+      <svg class="copyright__image" width="27" height="34" role="img" focusable="false">
+        <use href="images/logo-html.svg#logo" />
+      </svg>
     </a>
   </div>
 

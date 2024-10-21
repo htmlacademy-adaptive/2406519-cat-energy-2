@@ -2,6 +2,23 @@
   &--alter {
     background-color: #ffffff;
   }
+
+  img {
+    display: block;
+  }
+}
+
+.contacts__body {
+  padding-block: 26px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include tablet-desktop {
+    grid-template-columns: 160px 1fr;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 60px 40px;
+  }
 }
 
 .contacts__body {
@@ -15,14 +32,23 @@
 
   grid-row: span 2;
   margin: 0 16px 0 0;
-  font-style: 16px;
+  font-size: 16px;
   line-height: 1.25;
   text-transform: uppercase;
   color: #111111;
+
+  @include tablet-desktop {
+    font-size: 20px;
+    line-height: 26px;
+  }
 }
 
 .contacts__text {
   margin: 0;
   line-height: 20px;
   color: #444444;
+
+  @include tablet-desktop {
+    text-align: right;
+  }
 }

@@ -3,7 +3,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 17px 0;
   padding: 20px 20px 24px;
-  border-bottom: 1px solid #ebebeb;
+  border-top: 1px solid #ebebeb;
 
   img {
     display: block;
@@ -33,7 +33,7 @@
 
 .catalog-card__text {
   margin: 0;
-  font-style: 12px;
+  font-size: 12px;
   line-height: 16px;
   color: #444444;
 }

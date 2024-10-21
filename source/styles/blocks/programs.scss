@@ -4,10 +4,15 @@
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @include tablet-desktop {
+    gap: 30px;
+  }
 }
 
 .programs__item {
   position: relative;
+  min-height: 242px;
   padding: 20px 20px 18px;
   background-color: #f2f2f2;
 
@@ -27,6 +32,18 @@
       background-image: url("../../icons/cat-#{$modifier}.svg");
     }
   }
+
+  @include tablet-desktop {
+    padding: 76px 320px 54px 52px;
+
+    &::before {
+      top: 83px;
+      right: 29px;
+      left: auto;
+      transform: scale(4);
+      transform-origin: 100% 0;
+    }
+  }
 }
 
 .programs__title {
@@ -37,6 +54,12 @@
   font-size: 24px;
   line-height: 37px;
   text-transform: uppercase;
+
+  @include tablet-desktop {
+    margin: 0 0 24px;
+    font-size: 36px;
+    line-height: 1;
+  }
 }
 
 .programs__text {
@@ -44,6 +67,13 @@
   padding-bottom: 22px;
   color: #444444;
   border-bottom: 1px solid #d9d9d9;
+
+  @include tablet-desktop {
+    margin-bottom: 48px;
+    padding: 0;
+    border: none;
+    color: #000000;
+  }
 }
 
 .programs__link {
@@ -55,4 +85,9 @@
   line-height: 1;
   text-transform: uppercase;
   text-decoration: none;
+
+  @include tablet-desktop {
+    font-size: 20px;
+    line-height: 1.5;
+  }
 }

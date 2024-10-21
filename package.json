@@ -21,7 +21,7 @@
     "preview": "npm run build && browser-sync start -s build/ --cors --no-notify --no-ui",
     "lint": "npm-run-all -pc lint:**",
     "lint:spaces": "ec --exclude vendor/*",
-    "lint:markup": "cd source && html-validator --quiet",
+    "lint:markup": "gulp processMarkup && cd build && html-validator --quiet",
     "lint:html": "linthtml source/**/*.html --config .linthtmlrc",
     "lint:bem": "gulp lintBem --silent",
     "lint:styles": "stylelint \"source/styles/**/*.scss\"",
