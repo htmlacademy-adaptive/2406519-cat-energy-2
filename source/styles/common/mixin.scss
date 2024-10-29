@@ -58,14 +58,14 @@
 }
 
 @mixin background-image ($name, $index: 1) {
-  background-image: url("../../images/#{$name}@#{$index}-x.webp");
+  background-image: url("../../images/#{$name}@#{$index}x.webp");
 
   @include tablet-desktop() {
-    background-image: url("../../images/#{$name}-tablet@#{$index}-x.webp");
+    background-image: url("../../images/#{$name}-tablet@#{$index}x.webp");
   }
 
   @include desktop() {
-    background-image: url("../../images/#{$name}-desktop@#{$index}-x.webp");
+    background-image: url("../../images/#{$name}-desktop@#{$index}x.webp");
   }
 
   @if $index == 1 {

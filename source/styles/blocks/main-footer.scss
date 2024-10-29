@@ -11,11 +11,12 @@
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     align-items: center;
+    padding-block: 42px;
   }
 }
 
 .main-footer__logo {
-  @include tablet-desktop {
+  @include mobile {
     justify-self: center;
   }
 }

@@ -1,9 +1,13 @@
 .advantages {
   padding-block: 20px 49px;
 
-  @include tablet-desktop {
+  @include tablet {
     padding-block: 45px 44px;
     border-bottom: 1px solid #e6e6e6;
+  }
+
+  @include desktop {
+    padding-block: 72px 44px;
   }
 }
 
@@ -29,6 +33,11 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 35px 60px;
   }
+
+  @include desktop {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 80px;
+  }
 }
 
 .advantages__item {
@@ -43,6 +52,10 @@
     padding: 150px 60px 60px 0;
   }
 
+  @include desktop {
+    padding-inline: 0;
+  }
+
   &::before {
     --size: 60px;
     content: "";
@@ -51,10 +64,7 @@
     left: 0;
     width: var(--size);
     height: var(--size);
-    font-size: 280px;
-    line-height: 1;
-    color: #f2f2f2;
-    background: #68b738;
+    background-color: #68b738;
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: 60px;
@@ -81,6 +91,10 @@
 
     @include tablet-desktop {
       content: counter(advantages);
+    }
+
+    @include desktop {
+      right: 0;
     }
   }
 

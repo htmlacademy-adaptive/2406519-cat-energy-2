@@ -6,8 +6,8 @@
   text-decoration: none;
   pointer-events: none;
 
-  @include tablet-desktop {
-    justify-self: center;
+  @include mobile {
+    justify-content: space-between;
   }
 
   &:hover,

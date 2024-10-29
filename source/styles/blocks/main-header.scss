@@ -18,6 +18,10 @@
   padding-block: 13px 14px;
 
   @include tablet-desktop {
-    padding-bottom: 25px;
+    padding-block: 25px;
+  }
+
+  @include desktop {
+    padding-block: 55px 30px;
   }
 }

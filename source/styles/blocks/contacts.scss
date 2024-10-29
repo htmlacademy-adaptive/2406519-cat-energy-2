@@ -21,12 +21,6 @@
   }
 }
 
-.contacts__body {
-  padding-block: 26px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
 .contacts__title {
   @include oswald;
 

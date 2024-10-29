@@ -6,6 +6,7 @@
   line-height: 1;
   text-transform: uppercase;
   text-align: center;
+  color: var(--color, inherit);
 
   @include oswald;
 
@@ -24,6 +25,11 @@
     padding-right: 4px;
     font-size: 18px;
     line-height: 24px;
+  }
+
+  @include desktop {
+    font-size: 20px;
+    line-height: 1.5;
   }
 }
 
@@ -61,7 +67,7 @@
     border-bottom: 2px solid transparent;
 
     &--current {
-      border-color: #68b738;
+      border-color: var(--active-border-color, #68b738);
     }
   }
 }

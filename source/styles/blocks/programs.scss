@@ -8,13 +8,33 @@
   @include tablet-desktop {
     gap: 30px;
   }
+
+  @include desktop {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+    padding-top: 82px;
+  }
 }
 
 .programs__item {
   position: relative;
-  min-height: 242px;
   padding: 20px 20px 18px;
   background-color: #f2f2f2;
+
+  @each $modifier in (slim, pro) {
+    &--#{$modifier}::before {
+      background-image: url("../../icons/cat-#{$modifier}.svg");
+    }
+  }
+
+  @include tablet {
+    min-height: 242px;
+    padding: 76px 320px 54px 52px;
+  }
+
+  @include desktop {
+    padding: 55px 52px;
+  }
 
   &::before {
     content: "";
@@ -25,23 +45,20 @@
     height: 53px;
     background-repeat: no-repeat;
     background-position: 50%;
-  }
 
-  @each $modifier in (slim, pro) {
-    &--#{$modifier}::before {
-      background-image: url("../../icons/cat-#{$modifier}.svg");
-    }
-  }
-
-  @include tablet-desktop {
-    padding: 76px 320px 54px 52px;
-
-    &::before {
+    @include tablet {
       top: 83px;
       right: 29px;
       left: auto;
       transform: scale(4);
       transform-origin: 100% 0;
+    }
+
+    @include desktop {
+      top: 43px;
+      left: 35px;
+      transform: scale(2);
+      transform-origin: 0 0;
     }
   }
 }
@@ -60,6 +77,10 @@
     font-size: 36px;
     line-height: 1;
   }
+
+  @include desktop {
+    margin: 20px 0 74px 162px;
+  }
 }
 
 .programs__text {
@@ -73,6 +94,10 @@
     padding: 0;
     border: none;
     color: #000000;
+  }
+
+  @include desktop {
+    margin-bottom: 24px;
   }
 }
 

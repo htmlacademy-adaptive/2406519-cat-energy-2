@@ -4,6 +4,10 @@
   padding-block: 25px 40px;
   background-color: var(--background);
 
+  @media (min-width: 320px) {
+    overflow-x: clip;
+  }
+
   @include tablet-desktop {
     --background: #ffffff;
     padding-block: 45px 100px;
@@ -11,6 +15,7 @@
 
   @include desktop {
     --background: #eaeaea;
+    padding-block: 0 100px;
   }
 
   &::after {
@@ -19,25 +24,51 @@
     bottom: 0;
     left: 0;
     height: 462px;
-    background-color: var(--background);
+    background-color: #eaeaea;
 
-    @include tablet-desktop {
+    @include tablet {
       content: "";
     }
+  }
+}
+
+.example__container {
+  @include desktop {
+    display: grid;
+    grid-template-rows: min-content min-content 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "title title" "text pictures" "list picture";
+    align-items: start;
   }
 }
 
 .example__title {
   @include title;
 
+  grid-area: title;
+  position: relative;
+  z-index: 1;
   margin: 0 0 40px;
 
   @include tablet-desktop {
     margin-bottom: 60px;
   }
+
+  @include desktop {
+    padding-block: 20px 78px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0 -50vw;
+      z-index: -1;
+      background-color: #ffffff;
+    }
+  }
 }
 
 .example__text {
+  @include text;
   margin: 0 0 20px;
   color: #444444;
 
@@ -49,13 +80,14 @@
 .example__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-area: list;
   gap: 20px 32px;
   margin: 0 0 22px;
   padding: 0;
   list-style: none;
 
   @include tablet-desktop {
-    grid-template-columns: repeat(2, 162px), 1fr;
+    grid-template-columns: repeat(2, 162px) 1fr;
     gap: 43px;
     align-items: center;
     margin-bottom: 100px;
@@ -139,11 +171,12 @@
 .example__pictures {
   --value: var(--position, 50%);
   position: relative;
+  grid-area: pictures;
   max-width: 280px;
   margin: 0 auto;
 
   @include tablet-desktop {
-    z-index: -1;
+    z-index: 1;
     max-width: 560px;
   }
 
