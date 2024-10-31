@@ -13,6 +13,10 @@
     align-items: center;
     padding-block: 42px;
   }
+
+  @include desktop {
+    padding-block: 54px;
+  }
 }
 
 .main-footer__logo {

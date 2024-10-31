@@ -3,8 +3,33 @@
     background-color: #ffffff;
   }
 
+  @include desktop {
+    position: relative;
+    min-height: 200px;
+    padding-block: 95px 105px;
+  }
+}
+
+.contacts__map {
+  background-color: #eaeaea;
+
+  @include desktop {
+    position: absolute;
+    inset: 0;
+  }
+
   img {
     display: block;
+    margin: 0 auto;
+
+    @include desktop {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      max-width: 1440px;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }
 
@@ -18,6 +43,16 @@
     justify-content: space-between;
     gap: 40px;
     padding: 60px 40px;
+  }
+
+  @include desktop {
+    position: relative;
+    z-index: 1;
+    grid-template-columns: 1fr 1fr;
+    gap: 19px 78px;
+    max-width: 405px;
+    padding-inline: 80px;
+    background-color: #ffffff;
   }
 }
 
@@ -42,7 +77,7 @@
   line-height: 20px;
   color: #444444;
 
-  @include tablet-desktop {
+  @include tablet {
     text-align: right;
   }
 }

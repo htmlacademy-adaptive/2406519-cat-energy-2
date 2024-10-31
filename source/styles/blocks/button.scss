@@ -23,9 +23,11 @@
     line-height: 26px;
   }
 
-  @include tablet-desktop {
-    padding: 14px 28px;
-    font-size: 20px;
-    line-height: 26px;
+  &--big-alter {
+    @include tablet-desktop {
+      padding: 14px 28px;
+      font-size: 20px;
+      line-height: 26px;
+    }
   }
 }

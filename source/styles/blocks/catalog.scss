@@ -5,6 +5,16 @@
   border-bottom: 1px solid #ebebeb;
 
   @include tablet-desktop {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
     margin: 0;
+    border: none;
+  }
+}
+
+.catalog__card {
+  @include tablet-desktop {
+    margin-top: 80px;
   }
 }

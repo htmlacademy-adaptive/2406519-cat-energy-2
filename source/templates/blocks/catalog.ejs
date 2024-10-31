@@ -8,10 +8,10 @@
   <div class="container">
     <ul class="catalog__list">
       <% for (const item of items) { %>
-      <%- include('catalog-card', { ...item, className: '' }) %>
+      <%- include('catalog-card', { ...item, className: 'catalog__card' }) %>
       <% } %>
 
-      <li class="catalog-card catalog-card--alter">
+      <li class="catalog-card catalog-card--alter catalog__card">
         <h2 class="catalog-card__title">Показать еще 100500 товаров</h2>
         <p class="catalog-card__text">На самом деле вкусов гораздо больше!</p>
         <a class="catalog-card__button button button--alter" href="#">Показать все</a>

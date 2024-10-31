@@ -14,8 +14,8 @@
   }
 
   @include desktop {
-    --background: #eaeaea;
-    padding-block: 0 100px;
+    --background: #f2f2f2;
+    padding-block: 0 74px;
   }
 
   &::after {
@@ -37,7 +37,8 @@
     display: grid;
     grid-template-rows: min-content min-content 1fr;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "title title" "text pictures" "list picture";
+    grid-template-areas: "title pictures" "text pictures" "list pictures";
+    gap: 0 100px;
     align-items: start;
   }
 }
@@ -55,6 +56,7 @@
   }
 
   @include desktop {
+    margin-bottom: 70px;
     padding-block: 20px 78px;
 
     &::before {
@@ -68,12 +70,16 @@
 }
 
 .example__text {
-  @include text;
+  grid-area: text;
   margin: 0 0 20px;
   color: #444444;
 
   @include tablet-desktop {
     margin-bottom: 55px;
+  }
+
+  @include desktop {
+    margin: 0 128px 70px 0;
   }
 }
 
@@ -85,13 +91,19 @@
   margin: 0 0 22px;
   padding: 0;
   list-style: none;
+}
 
-  @include tablet-desktop {
-    grid-template-columns: repeat(2, 162px) 1fr;
-    gap: 43px;
-    align-items: center;
-    margin-bottom: 100px;
-  }
+@include tablet-desktop {
+  grid-template-columns: repeat(2, 162px) 1fr;
+  gap: 43px;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+@include desktop {
+  grid-template-columns: repeat(2, 162px);
+  row-gap: 55px;
+  margin-bottom: 100px;
 }
 
 .example__item {
@@ -147,11 +159,19 @@
   text-transform: uppercase;
   text-align: center;
 
+  @include tablet {
+    grid-column: span 1;
+    text-align: right;
+  }
+
   @include tablet-desktop {
     display: grid;
     gap: 9px;
-    grid-column: span 1;
-    text-align: right;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 24px;
   }
 }
 
@@ -178,6 +198,11 @@
   @include tablet-desktop {
     z-index: 1;
     max-width: 560px;
+  }
+
+  @include desktop {
+    align-self: end;
+    margin-bottom: 10px;
   }
 
   img {
