@@ -11,10 +11,10 @@
 <body class="page__body">
   <%- include('blocks/main-header', { page }) %>
 
-  <main>
+  <main class="page__main">
     <%- include('blocks/catalog', { items: [
       {
-        name: 'Cat Energy PRO 500 г',
+        name: 'Cat Energy PRO 500 г',
         weight: 500,
         taste: 'Курица',
         price: 700,
@@ -24,7 +24,7 @@
         }
       },
       {
-        name: 'Cat Energy PRO 1000 г',
+        name: 'Cat Energy PRO 1000 г',
         weight: 1000,
         taste: 'Курица',
         price: 1000,
@@ -34,7 +34,7 @@
         }
       },
       {
-        name: 'Cat Energy PRO 500 г',
+        name: 'Cat Energy PRO 500 г',
         weight: 500,
         taste: 'Рыба',
         price: 700,
@@ -44,7 +44,7 @@
         }
       },
       {
-        name: 'Cat Energy PRO 1000 г',
+        name: 'Cat Energy PRO 1000 г',
         weight: 1000,
         taste: 'Рыба',
         price: 1000,
@@ -54,7 +54,7 @@
         }
       },
       {
-        name: 'Cat Energy SLIM 500 г',
+        name: 'Cat Energy SLIM 500 г',
         weight: 500,
         taste: 'Гречка',
         price: 400,
@@ -64,7 +64,7 @@
         }
       },
       {
-        name: 'Cat Energy SLIM 1000 г',
+        name: 'Cat Energy SLIM 1000 г',
         weight: 1000,
         taste: 'Гречка',
         price: 700,
@@ -74,7 +74,7 @@
         }
       },
       {
-        name: 'Cat Energy SLIM 500 г',
+        name: 'Cat Energy SLIM 500 г',
         weight: 500,
         taste: 'Рис',
         price: 500,
@@ -88,7 +88,7 @@
     <%- include('blocks/catalog-additional.ejs', { items: [
       {
         name: 'Сахарозаменитель',
-        box: '1 упаковка (100 г)',
+        box: '1 упаковка (100 г)',
         price: 200,
       },
       {
@@ -103,7 +103,7 @@
       },
       {
         name: 'Витамины',
-        box: '1 упаковка (30 г)',
+        box: '1 упаковка (30 г)',
         price: 300,
       },
     ] }) %>
@@ -113,8 +113,8 @@
         <h2 class="subscription__title">Акции и новинки</h2>
         <p class="subscription__text">Подпишитесь на наши новости и не пропустите ни одного предложения!</p>
         <form class="subscription__form" action="https://echo.htmlacademy.ru">
-          <label for="email">
-            <input class="subscription__mail field" id="email" name="email" type="email" value="кuklachev@gmail.com">
+          <label for="email" aria-label="E-mail">
+            <input class="subscription__mail field" id="email" name="email" type="email" value="кuklachev@gmail.com" required>
           </label>
           <button class="subscription__button button button--big" type="submit">Подписаться</button>
         </form>

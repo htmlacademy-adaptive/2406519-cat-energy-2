@@ -7,5 +7,25 @@
   line-height: 1.5;
   color: #444444;
   text-transform: uppercase;
-  border: 1px solid #cdcdcd;
+  border: 1px solid #e7e7e7;
+  outline: none;
+
+  &:hover {
+    border-color: #cdcdcd;
+  }
+
+  &:focus,
+  &:user-invalid {
+    border: 2px solid;
+    padding: 11px;
+  }
+
+  &:user-invalid {
+    border-color: #ff8282;
+  }
+
+  &::placeholder {
+    color: inherit;
+    opacity: 0.3;
+  }
 }

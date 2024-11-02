@@ -104,6 +104,7 @@
 .programs__link {
   @include oswald;
 
+  position: relative;
   display: table;
   padding: 4px 47px 4px 0;
   font-size: 16px;
@@ -112,7 +113,42 @@
   text-decoration: none;
 
   @include tablet-desktop {
+    padding-right: 58px;
     font-size: 20px;
     line-height: 1.5;
+  }
+
+  &::after {
+    @include icon("arrow");
+
+    content: "";
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    width: 24px;
+    height: 10px;
+    background-position: 100% 50%;
+    background-size: 32px 12px;
+
+    @include motion {
+      transition: 0.3s ease-in-out;
+      transition-property: right, width;
+    }
+
+    @include tablet-desktop {
+      top: 14px;
+    }
+  }
+
+  &:hover,
+  &:active {
+    &::after {
+      right: 0;
+      width: 32px;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
   }
 }

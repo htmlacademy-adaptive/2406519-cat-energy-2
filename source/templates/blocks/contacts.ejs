@@ -11,7 +11,16 @@
     </div>
   </div>
 
-  <div class="contacts__map">
+  <div class="contacts__map map">
+    <template>
+      <picture>
+        <source type="image/webp" media="(min-width: 768px)" srcset="images/map-pin-tablet@1x.webp, images/map-pin-tablet@2x.webp 2x" width="113" height="106">
+        <source type="image/webp" srcset="images/map-pin@1x.webp, images/map-pin@2x.webp 2x" width="57" height="53">
+        <source media="(min-width: 768px)" srcset="images/map-pin-tablet@1x.png, images/map-pin-tablet@2x.png 2x" width="113" height="106">
+        <img class="map__pin" src="images/map-pin@1x.png" srcset="images/map-pin@2x.png 2x" width="57" height="53" alt="Метка адреса на карте" loading="lazy">
+      </picture>
+    </template>
+
     <%- include('../common/picture', {
       name: 'map',
       ext: 'png',

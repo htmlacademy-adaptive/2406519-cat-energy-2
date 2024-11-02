@@ -20,4 +20,6 @@ img {
 a {
   color: inherit;
   text-decoration-skip-ink: none;
+
+  @include default-interaction;
 }

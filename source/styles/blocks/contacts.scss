@@ -11,25 +11,9 @@
 }
 
 .contacts__map {
-  background-color: #eaeaea;
-
   @include desktop {
     position: absolute;
     inset: 0;
-  }
-
-  img {
-    display: block;
-    margin: 0 auto;
-
-    @include desktop {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      max-width: 1440px;
-      height: 100%;
-      object-fit: cover;
-    }
   }
 }
 

@@ -26,33 +26,41 @@
 @mixin subtitle {
   @include oswald;
 
+  position: relative;
+  width: fit-content;
   font-weight: 400;
   font-size: 24px;
   line-height: 1;
 
+  &::before {
+    content: "";
+    top: 10px;
+    right: -100vw;
+    left: -100vw;
+    z-index: -2;
+    height: 2px;
+    position: absolute;
+    background-color: #68b738;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0 -40px;
+    z-index: -1;
+    background-color: #ffffff;
+  }
+
   @include tablet-desktop {
-    position: relative;
-    width: fit-content;
     padding-inline: 40px;
     font-size: 32px;
 
     &::before {
-      content: "";
-      position: absolute;
       top: 14px;
-      right: -100vw;
-      left: -100vw;
-      z-index: -2;
-      height: 2px;
-      background-color: #68b738;
     }
 
     &::after {
-      content: "";
-      position: absolute;
       inset: 0;
-      z-index: -1;
-      background-color: #ffffff;
     }
   }
 
@@ -139,5 +147,30 @@
     @include retina() {
       @include background-image($name, $index: 2);
     }
+  }
+}
+
+@mixin icon($icon, $type: "background") {
+  $value: url("../../icons/#{$icon}.svg") no-repeat center / 100%;
+
+  @if $type == "mask" {
+    mask: $value;
+  }
+
+  @else {
+    background: $value;
+  }
+}
+
+@mixin motion {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}
+
+@mixin default-interaction {
+  @include motion {
+    transition: 0.3s ease-in-out;
+    transition-property: color, background-color, border-color, opacity, box-shadow;
   }
 }
