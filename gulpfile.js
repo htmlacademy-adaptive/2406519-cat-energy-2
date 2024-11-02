@@ -1,6 +1,8 @@
 import { readFileSync, rmSync } from 'node:fs';
 
 import gulp from 'gulp';
+import ejs from 'gulp-ejs';
+import rename from 'gulp-rename';
 import plumber from 'gulp-plumber';
 import htmlmin from 'gulp-htmlmin';
 import * as dartSass from 'sass';
@@ -33,8 +35,12 @@ const PATHS_TO_STATIC = [
 let isDevelopment = true;
 
 export function processMarkup () {
-  return src(`${PATH_TO_SOURCE}**/*.html`)
+  return src(`${PATH_TO_SOURCE}/templates/*.ejs`)
+    .pipe(ejs({
+      isDevelopment
+    }))
     .pipe(htmlmin({ collapseWhitespace: !isDevelopment }))
+    .pipe(rename({ extname: '.html' }))
     .pipe(dest(PATH_TO_DIST))
     .pipe(server.stream());
 }
@@ -136,7 +142,7 @@ export function copyStatic () {
 }
 
 export function startServer () {
-  const serveStatic = PATHS_TO_STATIC
+  const serveStatic = [...PATHS_TO_STATIC, `${PATH_TO_SOURCE}pixelperfect/**/*`]
     .filter((path) => path.startsWith('!') === false)
     .map((path) => {
       const dir = path.replace(/(\/\*\*\/.*$)|\/$/, '');
@@ -160,7 +166,7 @@ export function startServer () {
     });
   });
 
-  watch(`${PATH_TO_SOURCE}**/*.{html,njk}`, series(processMarkup));
+  watch(`${PATH_TO_SOURCE}**/*.{html,ejs}`, series(processMarkup));
   watch(`${PATH_TO_SOURCE}styles/**/*.scss`, series(processStyles));
   watch(`${PATH_TO_SOURCE}scripts/**/*.js`, series(processScripts));
   watch(`${PATH_TO_SOURCE}icons/**/*.svg`, series(createStack, reloadServer));

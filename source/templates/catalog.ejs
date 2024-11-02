@@ -1,0 +1,128 @@
+<% const page = 'catalog' %>
+
+<!DOCTYPE html>
+<html class="page" lang="ru">
+
+<head>
+  <title>Cat energy - Catalog</title>
+  <%- include('common/meta') %>
+</head>
+
+<body class="page__body">
+  <%- include('blocks/main-header', { page }) %>
+
+  <main class="page__main">
+    <%- include('blocks/catalog', { items: [
+      {
+        name: 'Cat Energy PRO 500 г',
+        weight: 500,
+        taste: 'Курица',
+        price: 700,
+        image: {
+          name: 'product-pro-500-chicken',
+          alt: 'Курица - 500 грамм'
+        }
+      },
+      {
+        name: 'Cat Energy PRO 1000 г',
+        weight: 1000,
+        taste: 'Курица',
+        price: 1000,
+        image: {
+          name: 'product-pro-1000-chicken',
+          alt: 'Курица - 1000 грамм'
+        }
+      },
+      {
+        name: 'Cat Energy PRO 500 г',
+        weight: 500,
+        taste: 'Рыба',
+        price: 700,
+        image: {
+          name: 'product-pro-500-fish',
+          alt: 'Рыба - 500 грамм'
+        }
+      },
+      {
+        name: 'Cat Energy PRO 1000 г',
+        weight: 1000,
+        taste: 'Рыба',
+        price: 1000,
+        image: {
+          name: 'product-pro-1000-fish',
+          alt: 'Рыба - 1000 грамм'
+        }
+      },
+      {
+        name: 'Cat Energy SLIM 500 г',
+        weight: 500,
+        taste: 'Гречка',
+        price: 400,
+        image: {
+          name: 'product-slim-500-buckwheat',
+          alt: 'Гречка - 500 грамм'
+        }
+      },
+      {
+        name: 'Cat Energy SLIM 1000 г',
+        weight: 1000,
+        taste: 'Гречка',
+        price: 700,
+        image: {
+          name: 'product-slim-1000-buckwheat',
+          alt: 'Гречка - 1000 грамм'
+        }
+      },
+      {
+        name: 'Cat Energy SLIM 500 г',
+        weight: 500,
+        taste: 'Рис',
+        price: 500,
+        image: {
+          name: 'product-slim-500-rice',
+          alt: 'Рис - 500 грамм'
+        }
+      },
+    ] }) %>
+
+    <%- include('blocks/catalog-additional.ejs', { items: [
+      {
+        name: 'Сахарозаменитель',
+        box: '1 упаковка (100 г)',
+        price: 200,
+      },
+      {
+        name: 'Питьевая вода',
+        box: '5 литров',
+        price: 50,
+      },
+      {
+        name: 'Молоко',
+        box: '1 литр',
+        price: 100,
+      },
+      {
+        name: 'Витамины',
+        box: '1 упаковка (30 г)',
+        price: 300,
+      },
+    ] }) %>
+
+    <section class="subscription">
+      <div class="container">
+        <h2 class="subscription__title">Акции и новинки</h2>
+        <p class="subscription__text">Подпишитесь на наши новости и не пропустите ни одного предложения!</p>
+        <form class="subscription__form" action="https://echo.htmlacademy.ru">
+          <label for="email" aria-label="E-mail">
+            <input class="subscription__mail field" id="email" name="email" type="email" value="кuklachev@gmail.com" required>
+          </label>
+          <button class="subscription__button button button--big" type="submit">Подписаться</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <%- include('blocks/main-footer', { page }) %>
+</body>
+
+</html>
