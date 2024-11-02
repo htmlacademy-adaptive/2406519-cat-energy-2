@@ -29,17 +29,17 @@
           alt: 'После'
         }
       ]) { %>
-      <%- include('../common/picture', {
-        name,
-        ext: 'png',
-        alt,
-        width: 280,
-        height: 256,
-        tabletWidth: 560,
-        tabletHeight: 512,
-        desktopWidth: 0,
-        desktopHeight: 0,
-      }) %>
+        <%- include('../common/picture', {
+          name,
+          ext: 'png',
+          alt,
+          width: 280,
+          height: 256,
+          tabletWidth: 560,
+          tabletHeight: 512,
+          desktopWidth: 0,
+          desktopHeight: 0,
+        }) %>
       <% } %>
       <button class="example__comparator" type="button">
         <span class="visually-hidden">Изменить соотношение</span>

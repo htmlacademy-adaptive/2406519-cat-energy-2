@@ -1,9 +1,11 @@
-@mixin font-face ($family, $weight:400, $style:normal) {
+@mixin font-face($family, $weight: 400, $style: normal) {
   @font-face {
     font-family: $family;
     font-weight: $weight;
     font-style: $style;
-    src: url("../../fonts/#{$family}-#{$weight}-#{$style}.woff2") format("woff2");
+    src:
+      url("../../fonts/#{$family}-#{$weight}-#{$style}.woff2")
+      format("woff2");
     font-display: swap;
   }
 }
@@ -21,8 +23,67 @@
   }
 }
 
+@mixin subtitle {
+  @include oswald;
+
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1;
+
+  @include tablet-desktop {
+    position: relative;
+    width: fit-content;
+    padding-inline: 40px;
+    font-size: 32px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 14px;
+      right: -100vw;
+      left: -100vw;
+      z-index: -2;
+      height: 2px;
+      background-color: #68b738;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-color: #ffffff;
+    }
+  }
+
+  @include desktop {
+    padding: 0;
+    font-size: 40px;
+
+    &::before {
+      top: 18px;
+    }
+
+    &::after {
+      inset: 0 -40px;
+    }
+  }
+}
+
 @mixin mobile {
   @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet-mobile {
+  @media (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1279px) {
     @content;
   }
 }
@@ -63,7 +124,7 @@
   font-family: "Oswald", sans-serif;
 }
 
-@mixin background-image ($name, $index: 1) {
+@mixin background-image($name, $index: 1) {
   background-image: url("../../images/#{$name}@#{$index}x.webp");
 
   @include tablet-desktop() {
@@ -76,7 +137,7 @@
 
   @if $index == 1 {
     @include retina() {
-      @include background-image ($name, $index: 2);
+      @include background-image($name, $index: 2);
     }
   }
 }

@@ -2,13 +2,28 @@
   @include oswald;
 
   padding-block: 40px;
+
+  @include tablet-desktop {
+    padding-block: 80px;
+  }
+
+  @include desktop {
+    padding-block: 95px 104px;
+  }
 }
 
 .subscription__title {
+  @include subtitle;
+
   margin: 0 0 32px;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 1;
+
+  @include tablet-desktop {
+    margin-bottom: 66px;
+  }
+
+  @include desktop {
+    margin-bottom: 72px;
+  }
 }
 
 .subscription__text {
@@ -16,10 +31,31 @@
   font-size: 16px;
   line-height: 1.5;
   text-align: center;
+
+  @include tablet-desktop {
+    margin-inline: 30px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.subscription__form {
+  @include tablet-desktop {
+    display: grid;
+    grid-template-columns: 1fr 256px;
+    margin-inline: 38px;
+  }
+
+  @include desktop {
+    max-width: 752px;
+    margin-inline: auto;
+  }
 }
 
 .subscription__mail {
-  margin-bottom: 16px;
+  @include mobile {
+    margin-bottom: 16px;
+  }
 }
 
 .subscription__button {

@@ -32,11 +32,11 @@
             title: 'Подбор программы',
           },
         ]) { %>
-        <li class="navigation__item">
-          <a class="navigation__link <%- page === id ? 'navigation__link--current' : '' %>" href="<%- id %>.html">
-            <%- title %>
-          </a>
-        </li>
+          <li class="navigation__item">
+            <a class="navigation__link <%- page === id ? 'navigation__link--current' : '' %>" href="<%- id %>.html">
+              <%- title %>
+            </a>
+          </li>
         <% } %>
       </ul>
     </nav>

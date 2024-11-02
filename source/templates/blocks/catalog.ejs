@@ -8,7 +8,7 @@
   <div class="container">
     <ul class="catalog__list">
       <% for (const item of items) { %>
-      <%- include('catalog-card', { ...item, className: 'catalog__card' }) %>
+        <%- include('catalog-card', { ...item, className: 'catalog__card' }) %>
       <% } %>
 
       <li class="catalog-card catalog-card--alter catalog__card">

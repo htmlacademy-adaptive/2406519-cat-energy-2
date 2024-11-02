@@ -1,12 +1,12 @@
 <picture>
   <% if (desktopWidth) { %>
-  <source media="(min-width: 1280px)" srcset="images/<%- name %>-desktop@1x.webp 1x, images/<%- name %>-desktop@2x.webp 2x" width="<%- desktopWidth %>" height="<%- desktopHeight %>" type="image/webp">
-  <source media="(min-width: 1280px)" srcset="images/<%- name %>-desktop@1x.<%- ext %> 1x, images/<%- name %>-desktop@2x.<%- ext %> 2x" width="<%- desktopWidth %>" height="<%- desktopHeight %>">
+    <source media="(min-width: 1280px)" srcset="images/<%- name %>-desktop@1x.webp 1x, images/<%- name %>-desktop@2x.webp 2x" width="<%- desktopWidth %>" height="<%- desktopHeight %>" type="image/webp">
+    <source media="(min-width: 1280px)" srcset="images/<%- name %>-desktop@1x.<%- ext %> 1x, images/<%- name %>-desktop@2x.<%- ext %> 2x" width="<%- desktopWidth %>" height="<%- desktopHeight %>">
   <% } %>
 
   <% if (tabletWidth) { %>
-  <source media="(min-width: 768px)" srcset="images/<%- name %>-tablet@1x.webp 1x, images/<%- name %>-tablet@2x.webp 2x" width="<%- tabletWidth %>" height="<%- tabletHeight %>" type="image/webp">
-  <source media="(min-width: 768px)" srcset="images/<%- name %>-tablet@1x.<%- ext %> 1x, images/<%- name %>-tablet@2x.<%- ext %> 2x" width="<%- tabletWidth %>" height="<%- tabletHeight %>">
+    <source media="(min-width: 768px)" srcset="images/<%- name %>-tablet@1x.webp 1x, images/<%- name %>-tablet@2x.webp 2x" width="<%- tabletWidth %>" height="<%- tabletHeight %>" type="image/webp">
+    <source media="(min-width: 768px)" srcset="images/<%- name %>-tablet@1x.<%- ext %> 1x, images/<%- name %>-tablet@2x.<%- ext %> 2x" width="<%- tabletWidth %>" height="<%- tabletHeight %>">
   <% } %>
 
   <source srcset="images/<%- name %>@1x.webp, images/<%- name %>@2x.webp 2x" type="image/webp">

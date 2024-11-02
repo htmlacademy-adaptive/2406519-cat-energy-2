@@ -1,14 +1,37 @@
 .additional-product {
   padding-top: 24px;
+
+  @include tablet-desktop {
+    padding-top: 74px;
+  }
+
+  @include desktop {
+    padding-top: 70px;
+  }
+}
+
+.additional-product__container {
+  @include desktop {
+    display: grid;
+    grid-template-columns: 1fr 245px;
+    align-items: start;
+    gap: 80px;
+  }
 }
 
 .additional-product__title {
-  @include oswald;
+  @include subtitle;
 
   margin: 0 0 35px;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 1;
+
+  @include tablet-desktop {
+    margin-bottom: 80px;
+  }
+
+  @include desktop {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
 }
 
 .additional-product__list {
@@ -16,6 +39,14 @@
   padding: 0;
   list-style: none;
   border-bottom: 1px solid #cdcdcd;
+
+  @include tablet-desktop {
+    margin-bottom: 70px;
+  }
+
+  @include desktop {
+    margin-bottom: 0;
+  }
 }
 
 .additional-product__promo-text {
@@ -26,4 +57,13 @@
   text-align: center;
   color: #ffffff;
   background-color: #68b738;
+
+  @include tablet {
+    padding: 70px 105px 70px 420px;
+    text-align: left;
+  }
+
+  @include desktop {
+    padding-inline: 40px;
+  }
 }

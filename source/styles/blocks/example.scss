@@ -91,19 +91,19 @@
   margin: 0 0 22px;
   padding: 0;
   list-style: none;
-}
 
-@include tablet-desktop {
-  grid-template-columns: repeat(2, 162px) 1fr;
-  gap: 43px;
-  align-items: center;
-  margin-bottom: 100px;
-}
+  @include tablet-desktop {
+    grid-template-columns: repeat(2, 162px) 1fr;
+    gap: 43px;
+    align-items: center;
+    margin-bottom: 100px;
+  }
 
-@include desktop {
-  grid-template-columns: repeat(2, 162px);
-  row-gap: 55px;
-  margin-bottom: 100px;
+  @include desktop {
+    grid-template-columns: repeat(2, 162px);
+    row-gap: 55px;
+    margin-bottom: 0;
+  }
 }
 
 .example__item {

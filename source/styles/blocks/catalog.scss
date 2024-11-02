@@ -11,6 +11,11 @@
     margin: 0;
     border: none;
   }
+
+  @include desktop {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 64px 80px;
+  }
 }
 
 .catalog__card {
