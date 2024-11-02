@@ -1,3 +1,13 @@
 {
-  "extends": "stylelint-config-htmlacademy"
+  "extends": "stylelint-config-htmlacademy",
+  "rules": {
+    "declaration-block-no-redundant-longhand-properties": [
+      true,
+      {
+        "ignoreShorthands": [
+          "grid-template"
+        ]
+      }
+    ]
+  }
 }

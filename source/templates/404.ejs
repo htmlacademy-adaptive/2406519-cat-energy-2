@@ -1,3 +1,5 @@
+<% const page = '404' %>
+
 <!DOCTYPE html>
 <html class="page" lang="ru">
 
@@ -7,12 +9,17 @@
 </head>
 
 <body class="page__body">
-  <%- include('blocks/header') %>
-  <main>
-    <h1>404</h1>
-    <p>Страница не найдена. <a href="/">Перейти на главную</a>.</p>
+  <%- include('blocks/main-header', { page }) %>
+
+  <main class="page__main">
+    <%- include('blocks/page-header', {
+      className: '',
+      title: '404',
+      description: 'Страница не найдена. <a href="index.html">Перейти на главную</a>.',
+    }) %>
   </main>
-  <%- include('blocks/footer') %>
+
+  <%- include('blocks/main-footer', { page }) %>
 </body>
 
 </html>

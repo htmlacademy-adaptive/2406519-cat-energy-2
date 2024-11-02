@@ -1,19 +1,27 @@
+<% const page = 'programs' %>
+
 <!DOCTYPE html>
 <html class="page" lang="ru">
 
 <head>
-  <meta charset="UTF-8">
   <title>Cat Energy - Programs</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="styles/styles.css">
-  <script src="scripts/index.js" defer></script>
+  <%- include('common/meta') %>
 </head>
 
 <body class="page__body">
-  <h1>
-    Здесь будет подбираться программа для Вашего кота
-  </h1>
-  <p>--- СТРАНИЦА В РАЗРАБОТКЕ ---</p>
+  <%- include('blocks/main-header', { page }) %>
+
+  <main class="page__main">
+    <%- include('blocks/page-header', {
+      className: '',
+      title: 'Подбор программы',
+      description: 'Заполните анкету, и мы подберем<br>программу питания для вашего кота',
+    }) %>
+
+    <div class="page-header container"><b>- - - СТРАНИЦА В РАЗРАБОТКЕ - - -</b></div>
+  </main>
+
+  <%- include('blocks/main-footer', { page }) %>
 </body>
 
 </html>
