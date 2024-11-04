@@ -129,7 +129,7 @@
 }
 
 @mixin oswald {
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", "Arial", sans-serif;
 }
 
 @mixin background-image($name, $index: 1) {

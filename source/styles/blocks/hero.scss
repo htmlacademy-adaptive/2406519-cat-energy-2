@@ -124,6 +124,7 @@
   }
 
   @include desktop {
+    max-width: 430px;
     margin-left: 80px;
   }
 }
